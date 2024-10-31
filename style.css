@@ -1,0 +1,1714 @@
+/*========================
+FONTS LINKS HERE
+========================*/
+@import url("https://fonts.cdnfonts.com/css/minion-pro");
+@import url("https://fonts.cdnfonts.com/css/agenda");
+@import url("https://fonts.cdnfonts.com/css/florence");
+
+/* @font-face {
+    font-family: 'Florence', sans-serif;
+    src: url(fonts/florence.otf);
+} */
+
+@font-face {
+    font-family: "Florence";
+    src: url(fonts/Florence-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Agenda';
+    src: url(fonts/agenda-light.ttf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Agenda';
+    src: url(fonts/agenda-bold.ttf);
+    font-weight: 700;
+}
+
+/*========================
+DEFAULT CSS AREA START
+========================*/
+:root {
+    --minionproFont: "Minion Pro", sans-serif;
+    --florenceFont: "FlorenceHC", sans-serif;
+}
+
+body {
+    font-family: "Agenda", sans-serif;
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-size: 16px;
+    font-weight: 300;
+    background-color: #F9F8F3;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    display: inline-block;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ::selection {
+    color: white; 
+    background: #ff7675;
+}
+
+::-webkit-selection {
+    color: white; 
+    background: #ff7675;
+}
+
+::-moz-selection {
+    color: white; 
+    background: #ff7675;
+} */
+
+.scrolltotop {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #1ebe73;
+    text-align: center;
+    font-size: 22px;
+    color: #ffffff;
+    position: fixed;
+    right: 30px;
+    bottom: 25px;
+    display: none;
+    animation: lab_top_up 5s linear infinite;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.scrolltotop i {
+    color: #ffff;
+}
+
+@keyframes lab_top_up {
+    0% {
+        transform: translateY(-15px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+.pluse,
+.pluse2 {
+    position: relative;
+    top: 10px;
+    left: -8px;
+    z-index: -1;
+}
+
+.pluse::before,
+.pluse2::before {
+    width: 40px;
+    height: 40px;
+}
+
+.pluse::after,
+.pluse::before,
+.pluse2::after,
+.pluse2::before {
+    background: #1ebe73;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    display: block;
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+
+.pluse::after,
+.pluse2::after {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    margin-left: -15px;
+    margin-top: -15px;
+}
+
+.pluse::before {
+    -webkit-animation: pluse_animate 2.5s infinite linear;
+    animation: pluse_animate 2.5s infinite linear;
+}
+
+.pluse2::before {
+    -webkit-animation: pluse_animate 3s infinite linear;
+    animation: pluse_animate 3s infinite linear;
+}
+
+@keyframes pluse_animate {
+    0% {
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(0.3);
+        transform: translate(-50%, -50%) scale(0.3);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(-50%, -50%) scale(2);
+        transform: translate(-50%, -50%) scale(2);
+    }
+}
+
+/*========================
+HEADER AREA CSS HERE
+========================*/
+.header-area {
+    padding-top: 41px;
+    padding-bottom: 25px;
+    background-color: #556131;
+}
+
+.menu-left ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-right ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-right ul li {
+    /* margin-left: auto; */
+    display: inline-block;
+}
+
+.menu-left ul li a,
+.menu-right ul li a {
+    color: #d1cda7;
+    font-family: var(--minionproFont);
+    letter-spacing: 3.2px;
+    text-transform: uppercase;
+}
+
+.menu-left ul li a,
+.menu-right ul li a {
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.menu-left ul li a:hover,
+.menu-right ul li a:hover {
+    color: #FBF8E0;
+    border-bottom: 2px solid #D1D2B4;
+}
+
+.logo-wrpper a {
+    width: 100%;
+    text-align: center;
+}
+
+.logo-wrpper a img {
+    width: 229px;
+}
+
+.menu-right ul li:last-child a {
+    font-style: italic;
+    font-weight: 500;
+    padding: 13px 22px 10.5px;
+    border-radius: 3px;
+    border: 1px solid #d1cda7;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.menu-right ul li:last-child a svg {
+    margin-left: 5px;
+}
+
+.menu-right ul li:last-child a:hover {
+    color: #556131;
+    background: #D1CDA7;
+}
+
+.menu-right ul li:last-child a svg path {
+    transition: all 0.3s ease;
+}
+
+.menu-right ul li:last-child a:hover svg path {
+    stroke: #556131;
+}
+
+.menu-right ul li:last-child a img {
+    margin-left: 10px;
+}
+
+.small-contact a {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-color: #d1cda7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.small-contact a img {
+    width: 55px;
+}
+
+/*========================
+HERO AREA CSS HERE
+========================*/
+.hero-area {
+    padding-left: 51px;
+    padding-right: 51px;
+    padding-bottom: 69px;
+    background-color: #556131;
+}
+
+.hero-area-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-area-img::after {
+    content: "";
+    display: block;
+    clear: both;
+    position: absolute;
+    width: 389.42px;
+    height: 366.468px;
+    background: url(images/hero-after.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    top: 0;
+    right: 0;
+}
+
+.hero-area-img::before {
+    content: "";
+    display: block;
+    clear: both;
+    position: absolute;
+    width: 228.148px;
+    height: 323.552px;
+    background: url(images/hero-before.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    left: 0;
+    bottom: -4px;
+}
+
+.hero-area-img img {
+    width: 100%;
+}
+
+.hero-area-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.hero-content-wrpper {
+    padding-top: 240px;
+}
+
+.hero-area-title h2 {
+    color: #fbf8e0;
+    font-family: "Florence", sans-serif;
+    font-size: 73px;
+    line-height: 120%;
+    margin-bottom: 11px;
+    position: relative;
+    z-index: 50;
+    text-transform: uppercase;
+}
+
+.hero-area-title p {
+    color: #fbf8e0;
+    font-family: var(--minionproFont);
+    font-size: 22px;
+    font-weight: 600;
+    position: relative;
+    z-index: 50;
+    width: 337px;
+}
+
+.hero-bottom-circle {
+    margin-top: 40px;
+    display: flex;
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    padding: 16px 19px;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: #fbf8e0;
+    transition: all 0.3s ease;
+}
+
+.hero-bottom-circle:hover {
+    background-color: #556131;
+}
+
+.hero-bottom-circle:hover p {
+    color: #D1CDA7;
+}
+
+.hero-bottom-circle:hover .icon-section svg path {
+    stroke: #D1CDA7;
+}
+
+.content-section p {
+    color: #556131;
+    text-align: center;
+    font-family: var(--minionproFont);
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 100%;
+    margin-top: -10px;
+}
+
+/*========================
+EMPLACEMENT AREA CSS HERE
+========================*/
+.emplacement-area {
+    background: #556131;
+    padding-top: 58px;
+    padding-bottom: 68px;
+    position: relative;
+    overflow: hidden;
+}
+
+.emplacement-area::after,
+.emplacement-area::before {
+    content: "";
+    display: block;
+    clear: both;
+    position: absolute;
+    width: 332.468px;
+    height: 100%;
+}
+
+.emplacement-area::before {
+    background: url(images/emplacement-before.png) no-repeat;
+    background-size: contain;
+    background-position: left;
+    left: 0;
+    top: 0;
+}
+
+.emplacement-area::after {
+    background: url(images/emplacement-after.png) no-repeat;
+    background-size: contain;
+    background-position: right;
+    right: 0;
+    top: 0;
+}
+
+.emplacement-content-wrpper {
+    max-width: 706px;
+    margin: auto;
+}
+
+.emplacement-icon img {
+    display: block;
+    margin: auto;
+}
+
+.emplacement-title p {
+    margin-top: 29px;
+    text-align: center;
+    color: #9e9b7f;
+    font-family: var(--minionproFont);
+    font-size: 14px;
+    position: relative;
+    z-index: 50;
+}
+
+.emplacement-heading h2 {
+    color: #d1cda7;
+    text-align: center;
+    font-family: "Florence";
+    font-size: 32px;
+    margin-top: 21px;
+    position: relative;
+    z-index: 50;
+    max-width: 539px;
+    margin: auto;
+    margin-top: 21px;
+}
+
+.emplacement-content p {
+    color: #d1cda7;
+    font-size: 20px;
+    font-style: normal;
+    line-height: 160%;
+    margin-top: 29px;
+    font-weight: 300;
+    text-align: center;
+    position: relative;
+    z-index: 50;
+}
+
+.emplacement-content p span {
+    font-weight: 700;
+    line-height: 160%;
+}
+
+.emplacement-content h5 {
+    color: #d1cda7;
+    font-family: var(--minionproFont);
+    font-size: 27px;
+    font-style: normal;
+    line-height: normal;
+    text-align: center;
+    position: relative;
+    z-index: 50;
+}
+
+.emplacement-btn {
+    margin-top: 52px;
+}
+
+.emplacement-btn a {
+    display: flex;
+    width: 200px;
+    height: 50px;
+    padding: 20px 35px 16px 35px;
+    justify-content: center;
+    align-items: center;
+    color: #d1cda7;
+    text-align: center;
+    font-family: var(--minionproFont);
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 3px;
+    border: 1px solid #d1cda7;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease;
+}
+
+.emplacement-btn a:hover {
+    color: #556131;
+    background-color: #D1CDA7;
+}
+
+/*========================
+DEUX RÉSIDENCES AREA CSS HERE
+========================*/
+.deux-residences-area {
+    position: relative;
+}
+
+.deux-residences-area::before,
+.deux-residences-area::after {
+    content: "";
+    display: block;
+    clear: both;
+    position: absolute;
+}
+
+.deux-residences-area::before {
+    width: 323px;
+    height: 291px;
+    background: url(images/residences-before.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    left: 0;
+    top: -20px;
+}
+
+.deux-residences-area::after {
+    width: 266px;
+    height: 367px;
+    background: url(images/residences-after.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    right: 0;
+    bottom: -27px;
+}
+
+.deux-residence-wrpper {
+    padding-top: 183px;
+}
+
+.residence-content-wrpper {
+    padding-bottom: 102px;
+}
+
+.deux-residence-top h5 {
+    color: #9e9b7f;
+    font-family: var(--minionproFont);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.deux-residence-top h2 {
+    color: #556131;
+    text-align: center;
+    font-family: "Florence";
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.residence-content-wrpper {
+    margin-top: 75px;
+}
+
+.residence-left-cntn {
+    max-width: 430px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.residence-left-cntn p {
+    color: #556131;
+    font-size: 20px;
+    /*! font-family: "Times New Roman", Times, serif; */
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%; /* 32px */
+}
+
+.residence-left-cntn p b {
+    font-weight: 700;
+}
+
+.single-cntn-wrpper {
+    display: flex;
+}
+
+.res-right-img {
+    width: 30%;
+    padding-right: 25px;
+    border-right: 1px dashed #556131;
+    display: flex;
+}
+
+.res-right-cntn {
+    width: 70%;
+    padding-left: 17px;
+}
+
+.res-right-img img {
+    width: 100%;
+    margin-top: auto;
+    display: block;
+}
+
+.res-right-cntn ul {
+    display: flex;
+    align-items: center;
+    gap: 29px;
+}
+
+.res-right-cntn ul li:first-child {
+    color: #556131;
+    font-family: var(--minionproFont);
+    font-size: 64px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+    width: 12%;
+    text-align: center;
+}
+
+.res-right-cntn ul li:last-child span {
+    color: #556131;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+/*========================
+COUNTER AREA CSS HERE
+========================*/
+.counter-area {
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.counter-area::before {
+    content: "";
+    display: block;
+    clear: both;
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    background: url(images/icons/counter-before.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    left: 0;
+    top: 0;
+    z-index: 900;
+}
+
+.counter-area-bg img {
+    width: 100%;
+}
+
+.counter-area-bg {
+    position: relative;
+}
+
+.counter-wrpper {
+    width: 65%;
+    position: absolute;
+    z-index: 60;
+    background: #b64c3a;
+    margin: auto;
+    left: 50%;
+    bottom: -10%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 192px;
+    padding-top: 32px;
+    padding-bottom: 26px;
+}
+
+.single-counter {
+    text-align: center;
+}
+
+.single-counter p {
+    color: #d1cda7;
+    text-align: center;
+    font-family: var(--minionproFont);
+    font-size: 72px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.single-counter span {
+    color: #d1cda7;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    /*! font-style: italic; */
+}
+
+.single-counter span br {
+    display: none;
+}
+
+/*========================
+CONFORT AREA CSS HERE
+========================*/
+.confort-img-wrpper {
+    height: 100%;
+}
+
+.confort-img-wrpper img {
+    width: 100%;
+    height: 100%;
+}
+
+.confort-bg {
+    background: #243516;
+}
+
+.confort-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 104px;
+    padding-right: calc((100vw - 1320px) / 2);
+}
+
+.confort-content h2 {
+    color: #d1cda7;
+    font-family: "Florence";
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 57px;
+}
+
+.confort-content p {
+    color: #d1cda7;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 30px;
+}
+
+/*========================
+APPARTEMENTS AREA CSS HERE
+========================*/
+.appartements-area {
+    position: relative;
+    padding-bottom: 252px;
+    overflow: hidden;
+}
+
+.appartements-area::before,
+.appartements-area::after {
+    content: "";
+    display: block;
+    clear: both;
+    position: absolute;
+}
+
+.appartements-area::before {
+    width: 422px;
+    height: 318px;
+    background: url(images/icons/appartements-before.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    top: 0;
+    left: 0;
+}
+
+.appartements-area::after {
+    width: 362px;
+    height: 273px;
+    background: url(images/appartement-after.png) no-repeat;
+    background-size: contain;
+    background-position: bottom center;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.appartement-top-wrpper {
+    max-width: 706px;
+    margin: auto;
+    padding-top: 112px;
+}
+
+.appartement-top-wrpper h5 {
+    color: #9e9b7f;
+    font-family: var(--minionproFont);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 17px;
+}
+
+.appartement-top-wrpper h2 {
+    color: #556131;
+    text-align: center;
+    font-family: "Florence";
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 49px;
+}
+
+.appartement-top-wrpper p {
+    color: #556131;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%;
+    margin-bottom: 49px;
+}
+
+.appartement-top-wrpper p span {
+    font-weight: 700;
+}
+
+.appartement-top-wrpper a {
+    width: 200px;
+    display: block;
+    margin: auto;
+    color: #556131;
+    text-align: center;
+    font-family: var(--minionproFont);
+    font-size: 20px;
+    font-weight: 400;
+    padding: 15px 35.5px 11px;
+    border-radius: 3px;
+    border: 1px solid #556131;
+    transition: all 0.3s ease;
+}
+
+.appartement-top-wrpper a:hover {
+    color: #D1CDA7;
+    background-color: #556131;
+}
+
+.post-wrpper {
+    margin-top: 78px;
+}
+
+.post-img img {
+    width: 100%;
+}
+
+.post-content h3 {
+    color: #556131;
+    font-family: var(--minionproFont);
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 37px;
+}
+
+.post-content p {
+    margin-bottom: 32px;
+}
+
+.second-post {
+    margin-top: 90px;
+}
+
+/*========================
+Map AREA CSS HERE
+========================*/
+.share-map-area {
+    padding-top: 73px;
+    padding-bottom: 35px;
+    background-color: #243516;
+}
+
+.map-area-title h5 {
+    color: #9e9b7f;
+    font-family: var(--minionproFont);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.map-area-title h2 {
+    color: #d1cda7;
+    text-align: center;
+    font-family: "Florence";
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 17px;
+    margin-bottom: 69px;
+}
+
+.map-wrpper img {
+    display: block;
+    margin: auto;
+}
+
+/*========================
+de la région AREA CSS HERE
+========================*/
+.de-la-region-area {
+    padding-top: 52px;
+    padding-bottom: 65px;
+    background: #243516;
+    position: relative;
+}
+
+.de-la-region-area::after {
+    content: "";
+    display: block;
+    clear: both;
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background: url(images/icons/dela-region-after.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    bottom: 0;
+    left: 0;
+}
+
+.dela-title-wrpper h3 {
+    color: #d1cda7;
+    font-family: var(--minionproFont);
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.single-dela-post {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.dela-post-cntn p {
+    color: #d1cda7;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.dela-post-wrpper {
+    margin-top: 67px;
+}
+
+.dela-post-wrpper .row {
+    row-gap: 57px;
+}
+
+/*========================
+infrastructures AREA CSS HERE
+========================*/
+.infrastructures-area {
+    padding-top: 40px;
+    padding-bottom: 66px;
+    background: #556131;
+}
+
+.infrastructures-top h3 {
+    color: #d1cda7;
+    font-family: var(--minionproFont);
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 41px;
+}
+
+.all-infrst-post {
+    width: 80%;
+    margin: auto;
+}
+
+.single-infrst-post {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+}
+
+.infrst-post-cntn p {
+    color: #d1cda7;
+    text-align: center;
+    font-size: 20px;
+    /*! font-weight: 400; */
+}
+
+/*========================
+CÔTÉ HÔTEL AREA CSS HERE
+========================*/
+.cote-hotel-area {
+    /* padding-bottom: 97px; */
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.cote-hotel-area::before,
+.cote-hotel-area::after {
+    content: "";
+    display: block;
+    clear: both;
+    position: absolute;
+}
+
+.cote-hotel-area::before {
+    width: 299.89px;
+    height: 594.015px;
+    background: url(images/icons/cote-hotel-before.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    left: 0;
+    bottom: -145px;
+}
+
+.cote-hotel-area::after {
+    width: 299.89px;
+    height: 594.015px;
+    background: url(images/icons/cote-hotel-after.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    right: 0;
+    bottom: -145px;
+}
+
+.cote-hotel-top {
+    max-width: 662px;
+    margin: auto;
+}
+
+.cote-hotel-top img {
+    width: 100%;
+}
+
+.cote-hotel-content {
+    max-width: 706px;
+    margin: auto;
+}
+
+.cote-hotel-content {
+    margin-top: 22px;
+    padding-bottom: 97px;
+}
+
+.cote-hotel-content h5 {
+    color: #9e9b7f;
+    font-family: var(--minionproFont);
+    font-size: 14px;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.cote-hotel-content h2 {
+    margin: 18px auto;
+    color: #556131;
+    text-align: center;
+    font-family: "Florence";
+    font-size: 32px;
+    max-width: 564px;
+    /*! margin: auto; */
+}
+
+.cote-hotel-desc p {
+    color: #556131;
+    font-size: 20px;
+    line-height: 160%;
+    text-align: center;
+}
+
+/*========================
+Superficie AREA CSS HERE
+========================*/
+.superficie-area {
+    padding: 32px 0;
+    background: #bd4f3c;
+}
+
+.single-superficie-content {
+    display: flex;
+    justify-content: center;
+}
+
+.superficie-icon {
+    padding-right: 34px;
+    border-right: 1px dashed #d1cda7;
+}
+
+.superficie-content {
+    padding-left: 25px;
+}
+
+.superficie-content p {
+    color: #d1cda7;
+    font-family: var(--minionproFont);
+    font-size: 72px;
+    font-style: italic;
+    line-height: 94%;
+}
+
+.superficie-content span {
+    color: #d1cda7;
+    font-size: 16px;
+    /*! font-weight: 400; */
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+
+/*========================
+Footer AREA CSS HERE
+========================*/
+.footer-area {
+    background: #556131;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-area::after {
+    content: "";
+    display: block;
+    clear: both;
+    position: absolute;
+    width: 561.338px;
+    height: 692.168px;
+    background: url(images/icons/footer-after.svg) no-repeat;
+    background-size: contain;
+    background-position: right;
+    top: -102px;
+    right: 0;
+}
+
+.footer-top-wrpper {
+    padding-top: 77px;
+    padding-bottom: 79px;
+}
+
+.footer-top-content h2 {
+    color: #d1cda7;
+    font-family: "Florence";
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 90000;
+}
+
+.footer-circle {
+    display: flex;
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    padding: 26px 29px;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: #556131;
+    border: 1px solid #d1cda7;
+    position: relative;
+    z-index: 9000;
+    transition: all 0.3s ease;
+}
+
+.footer-circle:hover {
+    background-color: #D1CDA7;
+}
+
+.footer-circle:hover p {
+    color: #556131;
+}
+
+.footer-circle .fc-img svg {
+    transition: all 0.3s ease;
+}
+
+.footer-circle:hover .fc-img svg path {
+    stroke: #556131;
+}
+
+.fc-contetn p {
+    color: #d1cda7;
+    text-align: center;
+    font-family: var(--minionproFont);
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 100%;
+}
+
+.footer-bottom {
+    padding-bottom: 53px;
+}
+
+.footer-logo-wrpper {
+    border-right: 1px dashed #d1cda7;
+}
+
+.location-footer p {
+    color: #d1cda7;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.location-footer ul {
+    display: flex;
+    gap: 27px;
+}
+
+.location-footer ul li span {
+    color: #d1cda7;
+    font-size: 16px;
+    /*! font-weight: 400; */
+    display: block;
+    position: relative;
+    z-index: 700;
+}
+
+/*========================
+CONTACT PAGE CSS HERE
+========================*/
+.contact-wrpper {
+    position: relative;
+    background-color: #556131;
+}
+
+.contact-wrpper::before,
+.contact-wrpper::after {
+    content: "";
+    display: block;
+    clear: both;
+    position: absolute;
+    width: 332px;
+    /* height: 993px; */
+    height: 100%;
+}
+
+.contact-wrpper::before {
+    background: url(images/contact-page-before.png) no-repeat;
+    background-size: contain;
+    background-position: left;
+    left: 0;
+    top: 0;
+}
+
+.contact-wrpper::after {
+    background: url(images/contact-page-after.png) no-repeat;
+    background-size: contain;
+    background-position: right;
+    top: 0;
+    right: 0;
+}
+
+.contact-form-wrpper {
+    max-width: 795px;
+    margin: auto;
+    padding-top: 98px;
+    padding-bottom: 78px;
+}
+
+.form-top {
+    display: flex;
+    align-items: center;
+}
+
+.form-title {
+    width: 90%;
+}
+
+.form-close {
+    width: 10%;
+}
+
+.form-title h2 {
+    color: #d1cda7;
+    font-family: "Florence";
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.close-btn {
+    display: flex;
+    width: 72px;
+    height: 72px;
+    padding: 20px 25px;
+    align-items: center;
+    background-color: #d1cda7;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.close-btn svg g,
+.close-btn svg g path {
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: #BD4F3C;
+}
+
+.close-btn:hover svg g path,
+.close-btn:hover svg g {
+    stroke: #FFFFFF;
+    fill: #FFFFFF;
+}
+
+.dual-btn-wrpper {
+    margin-top: 44px;
+}
+
+.dual-btn-wrpper ul {
+    display: flex;
+    gap: 18px;
+}
+
+.dual-btn-wrpper ul li:first-child a {
+    display: flex;
+    width: 181px;
+    height: 50px;
+    padding: 20px 30px 16px 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    border: 1px solid #d1cda7;
+    background: #d1cda7;
+    color: #556131;
+    text-align: center;
+    font-family: var(--minionproFont);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.dual-btn-wrpper ul li:last-child a {
+    display: flex;
+    width: 280px;
+    height: 50px;
+    padding: 20px 35px 16px 35px;
+    justify-content: center;
+    align-items: center;
+    color: #d1cda7;
+    text-align: center;
+    font-family: var(--minionproFont);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 3px;
+    border: 1px solid #d1cda7;
+}
+
+.from-wrpper {
+    margin-top: 41px;
+}
+
+.from-wrpper > p {
+    color: #d1cda7;
+    font-size: 20px;
+    /*! font-weight: 400; */
+    margin-bottom: 41px;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    display: inline-block;
+    color: #d1cda7;
+    font-size: 20px;
+    font-style: normal;
+    /*! font-weight: 400; */
+    line-height: 100%;
+}
+
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: transparent;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: #d1cda7;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.radio-input-row {
+    display: flex;
+    column-gap: 70px;
+}
+
+.first-name input,
+.last-name input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    border-bottom: 1px solid #d1cda7;
+    padding-bottom: 20px;
+    color: #d1cda7;
+    width: 100%;
+}
+
+.first-name input::placeholder,
+.last-name input::placeholder {
+    color: #d1cda7;
+    font-family: "Agenda";
+}
+
+.name-input-row {
+    margin-top: 45px;
+    display: flex;
+    gap: 36px;
+}
+
+.first-name,
+.last-name {
+    width: 100%;
+}
+
+.form-check label {
+    color: #d1cda7;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.custom-checkbox {
+    display: none;
+}
+
+.custom-label {
+    display: inline-block;
+    position: relative;
+    padding-left: 45px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-row label {
+    color: #d1cda7;
+    font-family: "Agenda";
+    font-size: 20px;
+    font-style: normal;
+    /*! font-weight: 400; */
+    line-height: normal;
+}
+
+.custom-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d1cda7;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+/* Change styles when the checkbox is checked */
+.custom-checkbox:checked + .custom-label::before {
+    background-color: transparent;
+    border-color: #d1cda7;
+}
+
+/* Add checkmark */
+.custom-checkbox:checked + .custom-label::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.submit-btn-wrpper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.submit-btn-wrpper p {
+    color: #d1cda7;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.submit-btn-wrpper input {
+    /* display: flex; */
+    width: 200px;
+    height: 50px;
+    /* padding: 20px 63px 16px 63px; */
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    border: 1px solid #d1cda7;
+    background: #d1cda7;
+    color: #556131;
+    text-align: center;
+    font-family: var(--minionproFont);
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.contact-footer-area {
+    padding: 44px 0;
+    background-color: #243516;
+}
+
+.contact-footer-wrpper {
+    max-width: 795px;
+    margin: auto;
+}
+
+.contact-footer-location ul li span,
+.contact-footer-email ul li span {
+    color: #d1cda7;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.contact-footer-logo,
+.contact-footer-location,
+.contact-footer-email {
+    width: 33%;
+    /*! text-align: center; */
+}
+
+.contact-footer-location,
+.contact-footer-email {
+    padding-left: 36px;
+}
+
+.contact-footer-location ul,
+.contact-footer-email ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.contact-footer-wrpper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-footer-location {
+    border-left: 1px dashed #d1cda7;
+    border-right: 1px dashed #d1cda7;
+}
+
+.cote-hotel-desc p span {
+	font-weight: 700;
+}
+
+.submit-btn-wrpper p {
+	font-weight: 300;
+    color: #D1CDA7;
+    font-size: 16px;
+}
+
+.post-content p {
+	font-weight: 300;
+    color: #556131;
+    font-size: 20px;
+    line-height: 160%;
+}
+
+.popup-btn {
+    cursor: pointer;
+}
+
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Background with opacity */
+    z-index: 9999999999;
+}
+
+/* Popup content */
+.popup-content {
+    position: relative;
+    background-color: #fff;
+    /*! margin: 3% auto; */
+    border: 1px solid #888;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.close-btn {
+    cursor: pointer;
+}
+
+.res-second-img img {
+	width: 127px;
+	display: block;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+}
+
+.dela-post-cntn,
+.infrst-post-cntn {
+	width: 247px;
+	margin: auto;
+}
+
+.footer-top-content {
+	max-width: 812px;
+}
+
+.pdr {
+    padding-right: 50px;
+}
+
+.pdl {
+    padding-left: 50px;
+}
